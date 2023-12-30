@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/all.min.css">
+   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Pacifico&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="css/bootstrap.min.css">
+   <link rel="stylesheet" href="css/style.css">
+   <title>Book Marker</title>
+</head>
+<body>
+   <div class="container">
+      <h1>Book Marker</h1>
+   <h2><i class="fa-sharp fa-solid fa-bookmark book-icon"></i>Bookmark your favorite sites<i class="fa-sharp fa-solid fa-bookmark  book-icon"></i></h2>
+   <div class=" d-flex justify-content-center align-items-center">
+     
+      <div class="book_marker_body w-75">
+         <div class="div-input">
+            <label for="siteNameInput" class="text-dark" ><i class="fa-solid fa-book-bookmark"></i>Site Name</label>
+            <input oninput="validationWebsiteName();" id="siteNameInput" type="text" class="form-control "  placeholder="Bookmark Name">
+            <div id="nameMessage" class="alert alert-danger d-none">Site name should contain uppercase and lowercase letters, spaces, apostrophes, periods, and hyphens. ....</div>
+         </div>
+         <div class="div-input">
+            <label for="siteUrlInput" class="text-dark"><i class="fa-solid fa-link"></i>Site Url</label>
+            <input oninput="validationUrl();" id="siteUrlInput" type="text" class="form-control " placeholder="Website URL">
+            <div id="nameMessageUrl" class="alert alert-danger d-none">Url must contain https:</div>
+         </div>
+         <button id="addBtn" onclick="addItem();" class="btn btn-danger mx-auto w-100 my-4">Submit</button>
+         <button id="updateBtn" onclick="updateBook();" class="btn btn-danger mx-auto w-100 my-4 d-none">Update</button>
+      </div>
+     
+   </div>
+   <input oninput="search()" class="form-control w-25 mb-3 m-auto"placeholder="search by name...." type="search" id="searchInput">
+   <table class="table w-75 mx-auto text-center shadow-lg">
+      <thead>
+         <th>Index</th>
+         <th>Website Name</th>
+         <th>Visit</th>
+         <th>Delete</th>
+         <th>Update</th>
+      </thead>
+      <tbody id="tableBody">
+      </tbody>
+   </table>
+   </div>
+   
+   <script src="js/bootstrap.bundle.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   <script src="js/main.js"></script>
+</body>
+</html>
